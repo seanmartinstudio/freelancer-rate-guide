@@ -14,11 +14,11 @@ const LoginForm = ( {setUser, setShowLogin} ) => {
       username: username,
       password: password
     })
-    .then(function (response) {
-      console.log(response);
+    .then(response => {
+      console.log("LoginForm Response ->", response);
     })
-    .catch(function (error) {
-      console.log(error);
+    .catch(error => {
+      setErrors(error.response.data.errors);
     });
   }
 
@@ -34,9 +34,11 @@ const LoginForm = ( {setUser, setShowLogin} ) => {
     <br></br>
     <br></br>
     <ul>
+    <div>
     {errors.map((error) => (
-        <li key={error}>{error}</li>
+        <p key={error}>{error}</p>
       ))}
+    </div>
     </ul>
   </form>
 )
