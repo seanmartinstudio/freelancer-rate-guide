@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  require 'byebug'
+  # require 'byebug'
 
     #Test end point to fetch all Users
     #GET '/all'
