@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
+  require 'byebug'
 
     #Test end point to fetch all Users
     #GET '/all'
-    def index 
-      user = User.all 
-      render json: user
-    end
+    # def index 
+    #   user = User.all 
+    #   render json: user
+    # end
   
     #SignupForm end point
     #POST '/signup'
@@ -21,8 +22,7 @@ class UsersController < ApplicationController
   #App.js end point on page load to authenticate return user.
   #If response.ok => navigate HomePage.
   #Else => navigate to LoginPage.
-  #GET '/me'
-  def show 
+  def index
       user = User.find_by(id: session[:user_id])
       if user 
           render json: user, status: :created

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   #USERS
   root "users#index"
+  get '/me', to: 'users#show'
 
   #SESSIONS
   post '/login', to: 'sessions#create'
