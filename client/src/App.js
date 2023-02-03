@@ -13,22 +13,18 @@ export const UserContext = createContext()
 function App() {
   const [user, setUser] = useState(false)
 
-  
   useEffect(() => {
     axios.get('/users')
   .then(function (response) {
-    // setUser(response.data)
+   setUser(response.data)
   })
   .catch(function (error) {
-    // handle error
-    console.log(error);
+    console.log("App.js Error ->", error);
   })
-  }, [user]);
-
-  
+  }, []);
 
   return (
-    <UserContext.Provider value={user}>
+    <UserContext.Provider value={[user, setUser]}>
       <Routes>
       <Route exact path="/"
       element={
