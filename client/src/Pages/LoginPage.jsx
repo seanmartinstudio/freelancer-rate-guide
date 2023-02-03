@@ -1,20 +1,21 @@
-import React from 'react'
-import { useState } from "react";
-import LoginForm from '../Components/LoginForm';
-import SignupForm from '../Components/SignupForm';
+import React, { useEffect, useContext } from 'react'
+import { useNavigate } from "react-router-dom";
+import { UserContext } from '../App'
 
 const LoginPage = () => {
+  
+  const user = useContext(UserContext)
+  const navigate = useNavigate();
 
-  //This boolean value toggles the LoginForm and SignupForm button via ternary.
-  const [showLogin, setShowLogin] = useState(true)
+  useEffect(() => {
+    if(user) {
+      navigate("/");
+    }
+  }, [user])
+  
 
  return (
-  <div>
-  { showLogin 
-  ? <LoginForm  setShowLogin={setShowLogin}/>
-  : <SignupForm  setShowLogin={setShowLogin}/>
-  }
-  </div>
+  <h1>LoginPage</h1>
  )
   }
 

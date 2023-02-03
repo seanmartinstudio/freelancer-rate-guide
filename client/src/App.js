@@ -11,7 +11,7 @@ import './App.css'
 export const UserContext = createContext()
 
 function App() {
-  const [user, setUser] = useState(true)
+  const [user, setUser] = useState(false)
 
   
   useEffect(() => {
@@ -23,20 +23,14 @@ function App() {
     // handle error
     console.log(error);
   })
-  }, []);
+  }, [user]);
 
   
 
   return (
-    <UserContext.Provider value={{user}}>
+    <UserContext.Provider value={user}>
       <Routes>
-      {/* {user
-        ? <Route exact path="/" element={<HomePage/>} />
-        : <Route exact path="/login" element={<LoginPage/>} />
-      } */}
-      <Route
-      exact
-      path="/"
+      <Route exact path="/"
       element={
         user ? (
           <HomePage />
@@ -45,10 +39,8 @@ function App() {
     )
   }
 />
-      <Route path="/" element={<LandingPage/>} />
-      <Route path="/" element={<HomePage/>} />
       <Route exact path="/login" element={<LoginPage/>} />
-      <Route exact path="signup" element={<SignupPage/>} />
+      <Route exact path="/signup" element={<SignupPage/>} />
       </Routes>
     </UserContext.Provider>
   );
