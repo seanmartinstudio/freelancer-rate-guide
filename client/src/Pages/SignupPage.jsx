@@ -32,6 +32,10 @@ const SignupPage = () => {
       setPassword("")
     })
   }
+
+  const navigatToLoginPage = () => {
+    navigate("/login")
+  }
   
   return (
     <form onSubmit={handleFormSubmit}>
@@ -41,7 +45,7 @@ const SignupPage = () => {
     <br></br>
     <button className="button">Sign Up</button>
     <br></br>
-    {/* <button className="button" type="button" onClick={() => setShowLogin(true)}>Already a user? Log In Here</button> */}
+    <button className="button" type="button" onClick={() => navigatToLoginPage()}>Already a user? Log In Here</button>
     <br></br>
     <br></br>
     <ul>
