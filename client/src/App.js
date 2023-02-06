@@ -29,7 +29,7 @@ function App() {
       <Route exact path="/"
       element={
         user ? (
-          <HomePage />
+            <HomePage />
     ) : (
       <LandingPage />
     )

@@ -25,7 +25,11 @@ const SignupPage = () => {
       username: username,
       password: password
     })
-    .then(navigate("/login"))
+    .then(response => {
+      if(response.statusText === "Created") {
+        navigate('/login')
+      }
+    })
     .catch(error => {
       setErrors(error.response.data.errors)
       setUsername("")

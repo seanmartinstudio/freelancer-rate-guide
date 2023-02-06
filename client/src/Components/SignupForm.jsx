@@ -1,9 +1,12 @@
 import React from 'react'
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"
 import axios from 'axios';
 
 
 const SignupForm = ( {onLogin, setShowLogin} ) => {
+
+    const navigate = useNavigate()
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [errors, setErrors] = useState([])
@@ -14,14 +17,14 @@ const SignupForm = ( {onLogin, setShowLogin} ) => {
         username: username,
         password: password
       })
-      .then(response => {
-        console.log("SignupForm Response ->", response);
+      .then(() => {
+        navigate('/login')
       })
-      .then(() => setShowLogin(true))
       .catch(error => {
-        setErrors(error.response.data.errors)
-        setUsername("")
-        setPassword("")
+        console.log("Signup Error", error.response.data.errors)
+        // setErrors(error.response.data.errors)
+        // setUsername("")
+        // setPassword("")
       })
     }
 
@@ -37,11 +40,11 @@ const SignupForm = ( {onLogin, setShowLogin} ) => {
     <button className="button" type="button" onClick={() => setShowLogin(true)}>Already a user? Log In Here</button>
     <br></br>
     <br></br>
-    <ul>
+    {/* <ul>
     {errors.map((error) => (
         <li key={error}>{error}</li>
       ))}
-    </ul>
+    </ul> */}
   </form>
   )
   

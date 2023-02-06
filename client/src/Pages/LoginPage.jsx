@@ -27,6 +27,7 @@ const LoginPage = () => {
       password: password
     })
     .then(response => {
+      console.log(response)
       setUser(response.data)
     })
     .catch(error => {
