@@ -25,9 +25,9 @@ function App() {
 
   return (
     <UserContext.Provider value={[user, setUser]}>
-      <div>
+      <nav>
         {user ? <NavBar/> : null}
-      </div>
+      </nav>
       <Routes>
       <Route exact path="/" element={user ? <HomePage /> : <LandingPage />} />
       <Route exact path="/login" element={<LoginPage/>} />
