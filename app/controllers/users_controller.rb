@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # require 'byebug'
+  require 'byebug'
 
     #Test end point to fetch all Users
     #GET '/all'
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-      params.permit(:username, :password)
+      params.permit(:username, :password, :email)
   end
 
 end
