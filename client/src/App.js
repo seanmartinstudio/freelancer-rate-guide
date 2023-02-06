@@ -25,16 +25,11 @@ function App() {
 
   return (
     <UserContext.Provider value={[user, setUser]}>
+      <div>
+        {user ? <NavBar/> : null}
+      </div>
       <Routes>
-      <Route exact path="/"
-      element={
-        user ? (
-            <HomePage />
-    ) : (
-      <LandingPage />
-    )
-  }
-/>
+      <Route exact path="/" element={user ? <HomePage /> : <LandingPage />} />
       <Route exact path="/login" element={<LoginPage/>} />
       <Route exact path="/signup" element={<SignupPage/>} />
       </Routes>
