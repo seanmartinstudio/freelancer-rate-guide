@@ -19,6 +19,9 @@ gem 'bcrypt', '~> 3.1.7'
 #Email validator (https://github.com/validates-email-format-of/validates_email_format_of)
 gem 'validates_email_format_of'
 
+#use the 'ap' command in console to pretty it up (https://github.com/awesome-print/awesome_print)
+gem 'awesome_print'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
