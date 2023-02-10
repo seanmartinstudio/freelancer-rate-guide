@@ -10,6 +10,10 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  text-align: center;
+}
+
 input:focus {
   outline: none;
 }
@@ -65,7 +69,7 @@ nav {
   padding: 10px;
 }
 
-article {
+ /* article {
   margin: 0 auto;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -75,8 +79,42 @@ article {
 	padding: 20px;
   width: 600px;
   height:min-content;
-  /* overflow: scroll; */
+} */
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  border-style: solid;
+  border-radius: 15px;
+  list-style: none;
+  margin: 15px;
+  padding: 15px;
 }
+
+section {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  border-style: solid;
+  border-radius: 15px;
+  margin: 15px;
+  padding: 15px;  
+}
+
+/* section {
+  display: flex;
+  flex-wrap: wrap;
+  border-style: solid;
+  border-radius: 15px;
+  list-style: none;
+  margin: 15px;
+  padding: 15px;
+} */
+
 
 .task-header {
    text-align: left;

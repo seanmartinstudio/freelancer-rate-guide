@@ -1,3 +1,3 @@
 class IndustrySerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :industry_type
 end

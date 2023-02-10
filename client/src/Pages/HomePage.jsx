@@ -1,8 +1,11 @@
 import React from 'react'
+import JobsContainer from '../Components/JobsContainer'
 
 const HomePage = () => {
   return (
-    <h1>HomePage</h1>
+    <div>
+    <JobsContainer/>
+    </div>
   )
 }
 
