@@ -16,7 +16,7 @@ const JobsContainer = () => {
   })
   }, []);
 
-  
+
   console.log("JOBS OBJ:", jobs)
 
   return (
@@ -25,7 +25,7 @@ const JobsContainer = () => {
     
         {jobs.map((job) => {
         return (
-        <Job job={job} key={job.id} company={job.company.company_size} industry={job.industry.industry_type}/> )
+        <Job job={job} key={job.id} company={job.company.company_size} industry={job.industry.industry_type} /> )
       })}
     
     </section>

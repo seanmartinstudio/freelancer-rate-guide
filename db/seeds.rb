@@ -32,5 +32,5 @@
     # Industry.create!(industry_type: "Consulting")
 
     # ### JOB SEED DATA
-    # # Job.create!(job_title: "Graphic Design", job_description: "Commissioned by the Art Director to create a series of movie posters for the Los Angeles area.", rate: 100.00, user_id: 1, industry_id: 4, company_id: 5)
-    # Job.create!(job_title: "Graphic Design", job_description: "Created an invite for a company party", rate: 50.00, user_id: 1, industry_id: 9, company_id: 2)
+    # Job.create!(job_title: "Graphic Design", job_description: "Commissioned by the Art Director to create a series of movie posters for the Los Angeles area.", rate: 100.00, user_id: 1, industry_id: 4, company_id: 5, experience: "Senior")
+    # Job.create!(job_title: "Graphic Design", job_description: "Created an invite for a company party", rate: 50.00, user_id: 1, industry_id: 9, company_id: 2, experience: "Junior")

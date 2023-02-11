@@ -1,5 +1,5 @@
 class JobSerializer < ActiveModel::Serializer
-  attributes :id, :job_title, :job_description, :rate
+  attributes :id, :job_title, :job_description, :rate, :experience
 
   # belongs_to :user
   belongs_to :industry
