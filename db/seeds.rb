@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-    require 'byebug'
+    # require 'byebug'
     ### USER SEED DATA
     sean = User.create!(username: "Sean Martin", password: "Los Angeles", email: "sean@seanmartinstudio.com")
     charles = User.create!(username: "Charles Boyce", password: "Cambridge", email: "Charlies.Boyce@gmail.com")
