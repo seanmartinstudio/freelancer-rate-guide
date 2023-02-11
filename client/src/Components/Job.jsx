@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Job = ( {job, company, industry} ) => {
+const Job = ( {job, company, industry, user} ) => {
   const {job_title, job_description, rate, experience} = job
 
   return (
@@ -11,6 +11,7 @@ const Job = ( {job, company, industry} ) => {
     <p>{experience}</p>
     <p>{company}</p>
     <p>{industry}</p>
+    <p>{user}</p>
   </article>
   )
 }

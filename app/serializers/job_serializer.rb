@@ -4,5 +4,6 @@ class JobSerializer < ActiveModel::Serializer
   # belongs_to :user
   belongs_to :industry
   belongs_to :company
+  belongs_to :user
 
 end
