@@ -7,6 +7,7 @@ import LandingPage from './Pages/LandingPage';
 import axios from 'axios';
 import SignupPage from './Pages/SignupPage'
 import './App.css'
+import PostJobPage from './Pages/PostJobPage';
 
 export const UserContext = createContext()
 
@@ -32,6 +33,7 @@ function App() {
       <Route exact path="/" element={user ? <HomePage /> : <LandingPage />} />
       <Route exact path="/login" element={<LoginPage/>} />
       <Route exact path="/signup" element={<SignupPage/>} />
+      <Route exact path="/post" element={<PostJobPage/>} />
       </Routes>
     </UserContext.Provider>
   );
