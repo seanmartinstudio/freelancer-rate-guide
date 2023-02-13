@@ -9,7 +9,7 @@ const PostJobForm = () => {
 
     const [jobTitle, setJobTitle] = useState("")
     const [jobDescription, setJobDescription] = useState("")
-    const [rate, setRate] = useState(null)
+    const [rate, setRate] = useState(0)
     const [experience, setExperience] = useState("")
     const [errors, setErrors] = useState([])
 

@@ -1,4 +1,4 @@
-import React, { useState }  from 'react'
+import React, { useState, useEffect }  from 'react'
 import axios from 'axios'
 import PostJobForm from '../Components/PostJobForm'
 
@@ -8,19 +8,22 @@ const PostJobPage = () => {
   const [errors, setErrors] = useState([])
 
   useEffect(() => {
-    axios.get('/user?ID=12345')
+
+    axios.get('/industries')
   .then(function (response) {
-    // handle success
-    console.log(response);
+    console.log("Industries Data:", response);
   })
   .catch(function (error) {
-    // handle error
     console.log(error);
   })
-  .then(function () {
-    // always executed
-  });
-    
+
+  axios.get('/companies')
+  .then(function (response) {
+    console.log("Companies Data:", response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  }) 
   }, [])
   
 
