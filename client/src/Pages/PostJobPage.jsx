@@ -3,15 +3,15 @@ import axios from 'axios'
 import PostJobForm from '../Components/PostJobForm'
 
 const PostJobPage = () => {
-  const [comapnySize, setCompanySize] = useState("")
-  const [industryType, setIndustryType] = useState("")
-  const [errors, setErrors] = useState([])
+  const [companies, setCompanies] = useState([])
+  const [industries, setIndustries] = useState([])
+
 
   useEffect(() => {
 
     axios.get('/industries')
   .then(function (response) {
-    console.log("Industries Data:", response);
+    setIndustries(response.data)
   })
   .catch(function (error) {
     console.log(error);
@@ -19,7 +19,7 @@ const PostJobPage = () => {
 
   axios.get('/companies')
   .then(function (response) {
-    console.log("Companies Data:", response);
+    setCompanies(response.data)
   })
   .catch(function (error) {
     console.log(error);
@@ -28,7 +28,7 @@ const PostJobPage = () => {
   
 
   return (
-    <PostJobForm />
+    <PostJobForm companies={companies} industries={industries}  />
   )
 }
 
