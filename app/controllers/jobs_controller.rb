@@ -16,6 +16,8 @@ class JobsController < ApplicationController
       else
           render json: { errors: ["Not Authorized"] }, status: :unauthorized
       end
+
+      
   end
 
 

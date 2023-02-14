@@ -9,7 +9,7 @@ const PostJobForm = ( {industries, companies}) => {
 
     const [jobTitle, setJobTitle] = useState("")
     const [jobDescription, setJobDescription] = useState("")
-    const [rate, setRate] = useState(0)
+    const [rate, setRate] = useState(undefined)
     const [experience, setExperience] = useState("")
     const [industry, setIndustry] = useState("")
     const [company, setCompany] = useState("")
@@ -48,36 +48,61 @@ const PostJobForm = ( {industries, companies}) => {
         <option value={company.id} key={company.id}>{company.company_size}</option>
         )
 
-        console.log("Industry Value:", industry)
-        console.log("Company Value:", company)
+        const jobTitleArr = ["Animator", "Art Director", "Cinematographer", "Copy Editor", "Copywriter", "Creative Director", "Developer", "Graphic Designer", "Illustrator", "Motion Graphics Designer", "Photographer", "Producer", "Product Designer", "Project Manager", "Strategist", "UX/UI Designer", "Video Director", "Video Editor"]
+
+        const jobTitleOptions = jobTitleArr.map((job) =>
+        <option>{job}</option>
+        )
+
+        const experienceLevelArr = ["Junior Level", "Mid Level", "Senior Level", "Executive Level"]
+
+        const experienceLevelOptions = experienceLevelArr.map((experience) =>
+        <option>{experience}</option>
+        )
   
     
 return (
     <form onSubmit={handleFormSubmit}>
         <h2>Post Job Info:</h2>
-        <input type="text" id="jobtitle" name="jobtitle" placeholder="Job Title..." onChange={(event) => setJobTitle(event.target.value)} value={jobTitle}></input>
+
+        <select name="jobtitle" id="jobtitle" value={jobTitle} onChange={(event) => setJobTitle(event.target.value)} >
+        <option id="jobtitles" value="">Job Title...</option>
+        {jobTitleOptions}
+        </select>
+
         <input type="text" id="jobdescription" name="jobdescription" placeholder="Job Description..." onChange={(event) => setJobDescription(event.target.value)} value={jobDescription}></input>
+
         <input type="number" id="rate" name="rate" placeholder="$ Hourly Rate..." onChange={(event) => setRate(event.target.value)} value={rate}></input>
-        <input type="text" id="experience" name="experience" placeholder="Experience Level..." onChange={(event) => setExperience(event.target.value)} value={experience}></input>
+
+        {/* <input type="text" id="experience" name="experience" placeholder="Experience Level..." onChange={(event) => setExperience(event.target.value)} value={experience}></input> */}
+
+        <select name="experience" id="experience" value={experience} onChange={(event) => setExperience(event.target.value)} >
+        <option id="experience" value="">Expereience Level...</option>
+        {experienceLevelOptions}
+        </select>
+
         <br></br>
+
         <select name="industries" id="industries" value={industry} onChange={(event) => setIndustry(event.target.value)} >
-        <option id="categories" value="">Industries...</option>
+        <option id="categories" value="">Industry...</option>
         {industryList}
         </select>
+
         <br></br>
         <select name="companies" id="companies" value={company} onChange={(event) => setCompany(event.target.value)} >
-        <option id="companies" value="">Companies...</option>
+        <option id="companies" value="">Company Size...</option>
         {companyList}
         </select>
+
         <br></br>
         <button className='button'>Submit Job Post</button>
         <br></br>
         <br></br>
-        {/* <ul>
+        <ul>
         {errors.map((error) => (
             <li key={error}>{error}</li>
             ))}
-        </ul> */}
+        </ul>
     </form>
 )
 }
