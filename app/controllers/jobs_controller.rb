@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  require 'byebug'
+  # require 'byebug'
 
     #HomePage Endpoint
     def index 

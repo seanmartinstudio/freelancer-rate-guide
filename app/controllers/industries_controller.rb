@@ -1,5 +1,5 @@
 class IndustriesController < ApplicationController
-require 'byebug'
+# require 'byebug'
     #PostJobPage Endpoint
     def index 
         industries = Industry.all 
