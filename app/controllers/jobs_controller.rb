@@ -9,16 +9,27 @@ class JobsController < ApplicationController
 
     #PostJobPage Endpoint
     def create 
-      user = User.find_by(id: session[:user_id])
-      if user
-          job = user.jobs.create(create_job_params)
-          render json: job, status: :created
-      else
-          render json: { errors: ["Not Authorized"] }, status: :unauthorized
-      end
+        user = User.find_by(id: session[:user_id])
+        if user
+            job = user.jobs.create(create_job_params)
+            render json: job, status: :created
+        else
+            render json: { errors: ["Not Authorized"] }, status: :unauthorized
+        end
+    end
 
-      
-  end
+    def show
+        user = User.find_by(id: session[:user_id])
+        if user
+          jobs = user.jobs
+          render json: jobs
+        else
+          render json: { errors: ["Not Authorized"] }, status: :unauthorized
+        end
+    end
+
+    
+
 
 
   private
