@@ -18,9 +18,12 @@ const NavBar = () => {
     <nav className='nav'>
         <Link to="/">
         <button className='button' type='button'>Home</button>
+        </Link>
         <Link to="/post">
         <button className='button' type='button'>Post</button>
         </Link>
+        <Link to="/user">
+        <button className='button' type='button'>User</button>
         </Link>
         <button className="button" type="button" onClick={handleLogoutClick}>Log Out</button>
     </nav>

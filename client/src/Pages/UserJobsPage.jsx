@@ -1,8 +1,11 @@
 import React from 'react'
+import UserJobsContainer from '../Components/UserJobsContainer'
 
 const UserJobsPage = () => {
   return (
-    <div>UserJobsPage</div>
+    <div>
+        <UserJobsContainer />
+    </div>
   )
 }
 

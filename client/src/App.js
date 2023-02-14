@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { createContext, useState, useEffect } from 'react';
 import HomePage from './Pages/HomePage'
 import LoginPage from './Pages/LoginPage'
@@ -8,6 +8,7 @@ import axios from 'axios';
 import SignupPage from './Pages/SignupPage'
 import './App.css'
 import PostJobPage from './Pages/PostJobPage';
+import UserJobsPage from './Pages/UserJobsPage';
 
 export const UserContext = createContext()
 
@@ -34,6 +35,7 @@ function App() {
       <Route exact path="/login" element={<LoginPage/>} />
       <Route exact path="/signup" element={<SignupPage/>} />
       <Route exact path="/post" element={<PostJobPage/>} />
+      <Route exact path="/user" element={<UserJobsPage/>} />
       </Routes>
     </UserContext.Provider>
   );

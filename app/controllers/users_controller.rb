@@ -22,13 +22,21 @@ class UsersController < ApplicationController
   #App.js end point on page load to authenticate return user.
   #If response.ok => navigate HomePage.
   #Else => navigate to LoginPage.
+  # def index
+  #     user = User.find_by(id: session[:user_id])
+  #     if user 
+  #         render json: user, status: :created
+  #     else
+  #         render json: { error: "Not Authorized" }, status: :unauthorized
+  #     end
+  # end
+
+  #UserJobs Endpoint
   def index
-      user = User.find_by(id: session[:user_id])
-      if user 
-          render json: user, status: :created
-      else
-          render json: { error: "Not Authorized" }, status: :unauthorized
-      end
+    user = User.find_by(id: session[:user_id])
+    if user
+      render json: user.jobs
+    end
   end
 
   private

@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  # require 'byebug'
+  require 'byebug'
 
     #HomePage Endpoint
     def index 
@@ -18,18 +18,13 @@ class JobsController < ApplicationController
         end
     end
 
-    def show
-        user = User.find_by(id: session[:user_id])
-        if user
-          jobs = user.jobs
-          render json: jobs
-        else
-          render json: { errors: ["Not Authorized"] }, status: :unauthorized
-        end
-    end
+    # def show
+    #     username = params[:string]
+    #     byebug
+    # end
 
     
-
+  
 
 
   private
