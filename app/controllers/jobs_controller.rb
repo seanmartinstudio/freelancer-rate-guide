@@ -18,10 +18,9 @@ class JobsController < ApplicationController
         end
     end
 
-    # def show
-    #     username = params[:string]
-    #     byebug
-    # end
+    #UPDATE
+
+    #DELETE
 
     
   
