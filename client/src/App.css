@@ -76,20 +76,8 @@ nav {
   padding: 10px;
 }
 
- /* article {
-  margin: 0 auto;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  text-align: left;
-  border-style: solid;
-  border-radius: 15px;
-	padding: 20px;
-  width: 600px;
-  height:min-content;
-} */
-
 article {
-  text-align: center;
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   border-style: solid;
@@ -97,6 +85,14 @@ article {
   border-radius: 15px;
   margin: 15px;
   padding: 15px; 
+}
+
+.sideButtonWrap {
+  float: right;
+}
+.side-button {
+  display: block;
+  margin-bottom: 10px;
 }
 
 .box {
