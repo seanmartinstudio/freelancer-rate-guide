@@ -1,13 +1,6 @@
 class UsersController < ApplicationController
   # require 'byebug'
 
-    #Test end point to fetch all Users
-    #GET '/all'
-    # def index 
-    #   user = User.all 
-    #   render json: user
-    # end
-  
     #SignupForm end point
     #POST '/signup'
     def create 
@@ -21,13 +14,13 @@ class UsersController < ApplicationController
 
 
 
-  #UserJobs Endpoint
-  def index
-    user = User.find_by(id: session[:user_id])
-    if user
-      render json: user.jobs
+    #UserJobs Endpoint
+    def index
+      user = User.find_by(id: session[:user_id])
+      if user
+        render json: user.jobs
+      end
     end
-  end
 
   private
 

@@ -21,6 +21,21 @@ class JobsController < ApplicationController
     #UPDATE
 
     #DELETE
+    def destroy 
+      user = User.find_by(id: session[:user_id])
+      if user
+          user_id = user.id
+          job = Job.find_by(id: params[:id])
+          if job.user_id == user_id 
+              job.destroy
+              head :no_content
+          else
+              render json: { error: ["Not Found"] }, status: :not_found
+          end
+      else
+          render json: { errors: ["Not Authorized"] }, status: :unauthorized
+      end
+  end
 
     
   

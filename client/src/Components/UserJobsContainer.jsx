@@ -3,7 +3,7 @@ import axios from 'axios'
 import UserJob from './UserJob'
 import { UserContext } from '../App'
 
-const UserJobsContainer = () => {
+const UserJobsContainer = ( {} ) => {
 
   const[userJobs, setUserJobs] = useState([])
   const [user, setUser] = useContext(UserContext)
@@ -17,12 +17,19 @@ const UserJobsContainer = () => {
       console.log("Jobs Error:", error)
     })
   }, [])
+
+  const handleDeleteUserJob = (id) => {
+    const updatedUserJobs = userJobs.filter((job) => job.id !== id);
+    setUserJobs(updatedUserJobs)
+  }
+
+
   
   return (
     <section>
           {userJobs.map((job) => {
         return (
-        <UserJob job={job} key={job.id} company={job.company.company_size} industry={job.industry.industry_type} user={job.user.username} /> )
+        <UserJob job={job} key={job.id} id={job.id} company={job.company.company_size} industry={job.industry.industry_type} user={job.user.username} handleDeleteUserJob={handleDeleteUserJob} /> )
       })}
     </section>
   )
