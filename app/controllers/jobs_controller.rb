@@ -1,12 +1,14 @@
 class JobsController < ApplicationController
   # require 'byebug'
 
+    #READ
     #HomePage Endpoint
     def index 
       jobs = Job.all 
       render json: jobs
     end
 
+    #CREATE
     #PostJobPage Endpoint
     def create 
         user = User.find_by(id: session[:user_id])
@@ -19,8 +21,23 @@ class JobsController < ApplicationController
     end
 
     #UPDATE
+    def update
+      user = User.find_by(id: session[:user_id])
+      if user
+          user_id = user.id
+          job = Job.find_by(id: params[:id])
+          if job.user_id == user_id
+              job.update(update_job_params)
+              render json: job
+          else
+              render json: { error: ["Not Found"] }, status: :not_found
+          end
+      else
+          render json: { errors: ["Not Authorized"] }, status: :unauthorized
+      end
+  end
 
-    #DELETE
+    #DESTROY
     def destroy 
       user = User.find_by(id: session[:user_id])
       if user
@@ -42,6 +59,10 @@ class JobsController < ApplicationController
 
 
   private
+
+  def update_job_params
+    params.permit(:job_title, :job_description, :rate, :experience, :industry_id, :company_id)
+  end
 
 
   def create_job_params
