@@ -1,7 +1,11 @@
 import React from 'react'
+import { useState} from 'react';
+import EditJobForm from './EditJobForm';
 
 const UserJob = ( {job, company, industry, user, id , handleDeleteUserJob} ) => {
   const {job_title, job_description, rate, experience} = job
+
+  const [editJobForm, setEditJobForm] = useState(false)
 
   function handleUserJobDeleteClick() {
     fetch(`/jobs/` + id, {
@@ -11,11 +15,15 @@ const UserJob = ( {job, company, industry, user, id , handleDeleteUserJob} ) => 
         handleDeleteUserJob(id);
       }
       })}
+    
+      const handleClick = () => {
+        setEditJobForm(!editJobForm)
+      }
 
   return (
   <div>
     <div className='sideButtonWrap'>
-    <button class="side-button">Edit</button>
+    <button class="side-button" onClick={handleClick}>Edit</button>
     <button class="side-button" onClick={handleUserJobDeleteClick}>Delete</button>
     </div>
     <article>
@@ -27,6 +35,10 @@ const UserJob = ( {job, company, industry, user, id , handleDeleteUserJob} ) => 
       <p>{industry}</p>
       <p>{user}</p>
     </article>
+    { editJobForm
+    ? <EditJobForm id={id} setEditJobForm={setEditJobForm} editJobForm={editJobForm}/>
+    : <div/>
+    }
   </div>
   )
 }

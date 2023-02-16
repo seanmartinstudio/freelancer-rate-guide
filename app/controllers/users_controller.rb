@@ -14,13 +14,13 @@ class UsersController < ApplicationController
 
 
 
-    #UserJobs Endpoint
-    def index
-      user = User.find_by(id: session[:user_id])
-      if user
-        render json: user.jobs
-      end
+  #UserJobs Endpoint
+  def index
+    user = User.find_by(id: session[:user_id])
+    if user
+      render json: user.jobs
     end
+  end
 
   private
 

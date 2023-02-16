@@ -14,7 +14,11 @@ class JobsController < ApplicationController
         user = User.find_by(id: session[:user_id])
         if user
             job = user.jobs.create(create_job_params)
-            render json: job, status: :created
+              if job.valid?
+                render json: job, status: :created
+              else
+                render json: { errors: job.errors.full_messages }, status: :unauthorized
+              end
         else
             render json: { errors: ["Not Authorized"] }, status: :unauthorized
         end
@@ -28,9 +32,13 @@ class JobsController < ApplicationController
           job = Job.find_by(id: params[:id])
           if job.user_id == user_id
               job.update(update_job_params)
-              render json: job
+                if job.valid?
+                  render json: job
+                else
+                  render json: { errors: job.errors.full_messages }, status: :unauthorized
+                end
           else
-              render json: { error: ["Not Found"] }, status: :not_found
+              render json: { error: "Not Found" }, status: :not_found
           end
       else
           render json: { errors: ["Not Authorized"] }, status: :unauthorized
