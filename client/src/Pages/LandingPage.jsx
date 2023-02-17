@@ -23,7 +23,7 @@ const LandingPage = () => {
       <button className='button' type='button' onClick={() => navigateToLoginPage()}>Log in</button>
       <button className='button' type='button' onClick={() => navigatToSignupPage()}>Sign up</button>
     </nav>
-    <h1>LandingPage</h1>
+    <h1>Welcome To The Freelancer Rate Guide</h1>
     </div>
   );
 }

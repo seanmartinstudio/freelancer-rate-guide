@@ -63,8 +63,7 @@ const PostJobForm = ( {industries, companies}) => {
     
 return (
     <form onSubmit={handleFormSubmit}>
-        <h2>Post Job Info:</h2>
-
+      
         <select name="jobtitle" id="jobtitle" value={jobTitle} onChange={(event) => setJobTitle(event.target.value)} >
         <option id="jobtitles" value="">Job Title...</option>
         {jobTitleOptions}
