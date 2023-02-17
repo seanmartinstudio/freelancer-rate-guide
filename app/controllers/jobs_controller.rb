@@ -1,11 +1,18 @@
 class JobsController < ApplicationController
-  # require 'byebug'
+  require 'byebug'
 
     #READ
     #HomePage Endpoint
     def index 
       jobs = Job.all 
       render json: jobs.reverse_order
+    end
+
+    #SHOW
+    def search
+      title = params[:string].capitalize
+      jobs = Job.where(job_title: title)
+      render json: jobs
     end
 
     #CREATE

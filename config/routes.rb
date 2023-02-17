@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
-  get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
+  # get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 
   #USERS
   root "users#index"
@@ -17,5 +17,10 @@ Rails.application.routes.draw do
   #SESSIONS
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+
+  #JOBS
+  get '/jobs_search/:string', to: 'jobs#search', as: 'search'
+
+  # get '/category_tasks/:int', to: 'categories#category_tasks'
  
 end
