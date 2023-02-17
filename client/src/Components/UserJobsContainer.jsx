@@ -29,7 +29,7 @@ const UserJobsContainer = ( {} ) => {
     <section>
           {userJobs.map((job) => {
         return (
-        <UserJob job={job} key={job.id} id={job.id} company={job.company.company_size} industry={job.industry.industry_type} user={job.user.username} handleDeleteUserJob={handleDeleteUserJob} /> )
+        <UserJob job={job} key={job.id} id={job.id} company={job.company.company_size} industry={job.industry.industry_type} user={job.user.username} handleDeleteUserJob={handleDeleteUserJob} userJobs={userJobs} setUserJobs={setUserJobs} /> )
       })}
     </section>
   )

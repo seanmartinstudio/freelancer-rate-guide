@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def index
     user = User.find_by(id: session[:user_id])
     if user
-      render json: user.jobs
+      render json: user.jobs.reverse_order
     end
   end
 

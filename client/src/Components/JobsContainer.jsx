@@ -21,7 +21,7 @@ const JobsContainer = () => {
 
   return (
     <section>
-        <JobSearchBar/>
+        {/* <JobSearchBar/> */}
     
         {jobs.map((job) => {
         return (

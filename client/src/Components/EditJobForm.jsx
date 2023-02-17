@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom"
 
 
-const EditJobForm = ( {id, editJobForm, setEditJobForm} ) => {
+const EditJobForm = ( {id, editJobForm, setEditJobForm, userJobs, setUserJobs} ) => {
 
     const navigate = useNavigate()
 
@@ -60,8 +60,6 @@ const EditJobForm = ( {id, editJobForm, setEditJobForm} ) => {
             setExperience("")
           })
         }
-
-        console.log("ERRORS:", errors)
 
         const industryList = industries.map((industry) =>
         <option value={industry.id} key={industry.id}>{industry.industry_type}</option>

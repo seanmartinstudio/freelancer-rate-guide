@@ -5,7 +5,7 @@ class JobsController < ApplicationController
     #HomePage Endpoint
     def index 
       jobs = Job.all 
-      render json: jobs
+      render json: jobs.reverse_order
     end
 
     #CREATE

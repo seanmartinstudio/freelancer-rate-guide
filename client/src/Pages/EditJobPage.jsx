@@ -1,35 +1,35 @@
-import React, { useState, useEffect }  from 'react'
-import axios from 'axios'
-import EditJobForm from '../Components/EditJobForm'
+// import React, { useState, useEffect }  from 'react'
+// import axios from 'axios'
+// import EditJobForm from '../Components/EditJobForm'
 
-const EditJobPage = () => {
-  const [companies, setCompanies] = useState([])
-  const [industries, setIndustries] = useState([])
+// const EditJobPage = () => {
+//   const [companies, setCompanies] = useState([])
+//   const [industries, setIndustries] = useState([])
 
 
-  useEffect(() => {
+//   useEffect(() => {
 
-    axios.get('/industries')
-  .then(function (response) {
-    setIndustries(response.data)
-  })
-  .catch(function (error) {
-    console.log(error);
-  })
+//     axios.get('/industries')
+//   .then(function (response) {
+//     setIndustries(response.data)
+//   })
+//   .catch(function (error) {
+//     console.log(error);
+//   })
 
-  axios.get('/companies')
-  .then(function (response) {
-    setCompanies(response.data)
-  })
-  .catch(function (error) {
-    console.log(error);
-  }) 
-  }, [])
+//   axios.get('/companies')
+//   .then(function (response) {
+//     setCompanies(response.data)
+//   })
+//   .catch(function (error) {
+//     console.log(error);
+//   }) 
+//   }, [])
   
 
-  return (
-    <EditJobForm companies={companies} industries={industries}  />
-  )
-}
+//   return (
+//     <EditJobForm companies={companies} industries={industries}  />
+//   )
+// }
 
-export default EditJobPage
+// export default EditJobPage

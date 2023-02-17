@@ -11,7 +11,7 @@ const Job = ( {job, company, industry, user} ) => {
     <p>{experience}</p>
     <p>{company}</p>
     <p>{industry}</p>
-    <p>{user}</p>
+    {/* <p>{user}</p> */}
   </article>
   )
 }

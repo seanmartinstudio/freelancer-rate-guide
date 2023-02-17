@@ -2,6 +2,8 @@ import React, { useContext } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from '../App'
 
+
+
 const NavBar = () => {
 
   const navigate = useNavigate()
@@ -16,6 +18,7 @@ const NavBar = () => {
 
   return (
     <nav className='nav'>
+      
         <Link to="/">
         <button className='button' type='button'>Home</button>
         </Link>
