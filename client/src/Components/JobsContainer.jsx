@@ -4,6 +4,7 @@ import JobSearchBar from './JobSearchBar'
 import axios from 'axios'
 
 const JobsContainer = () => {
+    const [jobTitle, setJobTitle] = useState("")
     const[jobs, setJobs] = useState([])
   
   useEffect(() => {
@@ -17,11 +18,19 @@ const JobsContainer = () => {
   }, []);
 
 
-  console.log("JOBS OBJ:", jobs)
+  const jobTitleArr = ["Animator", "Art Director", "Cinematographer", "Copy Editor", "Copywriter", "Creative Director", "Developer", "Graphic Designer", "Illustrator", "Motion Graphics Designer", "Photographer", "Producer", "Product Designer", "Project Manager", "Strategist", "UX/UI Designer", "Video Director", "Video Editor"]
+
+  const jobTitleOptions = jobTitleArr.map((job) =>
+        <option>{job}</option>
+        )
+
+    console.log("Drop Down Job Title:", jobTitle)
+    console.log("Job Selected After Drop Down", jobs)
 
   return (
+    <div>
     <section>
-        <JobSearchBar/>
+        {/* <JobSearchBar jobTitle={jobTitle}/> */}
     
         {jobs.map((job) => {
         return (
@@ -29,7 +38,13 @@ const JobsContainer = () => {
       })}
     
     </section>
-   
+    <form>
+       <select name="jobtitle" id="jobtitle" value={jobTitle} onChange={(event) => setJobTitle(event.target.value)} >
+        <option id="jobtitles" value="">Job Title...</option>
+        {jobTitleOptions}
+        </select>
+   </form>
+    </div>
   )
 }
 

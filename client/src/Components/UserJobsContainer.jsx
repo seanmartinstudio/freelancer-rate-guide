@@ -16,7 +16,7 @@ const UserJobsContainer = ( {} ) => {
     .catch(function (error) {
       console.log("Jobs Error:", error)
     })
-  }, [userJobs])
+  }, [])
 
   const handleDeleteUserJob = (id) => {
     const updatedUserJobs = userJobs.filter((job) => job.id !== id);

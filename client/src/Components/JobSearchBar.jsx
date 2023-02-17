@@ -1,7 +1,7 @@
 import React, { useState }  from 'react'
 import axios from 'axios'
 
-const JobSearchBar = () => {
+const JobSearchBar = (  ) => {
   const [jobTitle, setJobTitle] = useState("")
 
   const jobTitleArr = ["Animator", "Art Director", "Cinematographer", "Copy Editor", "Copywriter", "Creative Director", "Developer", "Graphic Designer", "Illustrator", "Motion Graphics Designer", "Photographer", "Producer", "Product Designer", "Project Manager", "Strategist", "UX/UI Designer", "Video Director", "Video Editor"]
