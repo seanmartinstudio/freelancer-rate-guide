@@ -30,7 +30,6 @@ const JobsContainer = () => {
   return (
     <div>
     <section>
-        {/* <JobSearchBar jobTitle={jobTitle}/> */}
         <form>
        <select name="jobtitle" id="jobtitle" value={jobTitle} onChange={(event) => setJobTitle(event.target.value)} >
         <option id="jobtitles" value="All">All Job Titles</option>
