@@ -117,6 +117,12 @@ article {
   border-radius: 15px;
   margin: 15px;
   padding: 15px; 
+  font-weight: normal;
+  transition: all 0.1s ease-out;
+}
+
+article:hover {
+  font-weight: bold;
 }
 
 .sideButtonWrap {
