@@ -27,13 +27,13 @@ const UserJob = ( {job, company, industry, industryID, companyID, user, id , han
     <button class="side-button" onClick={handleUserJobDeleteClick}>Delete</button>
     </div>
     <article>
-      <p>{job_title}</p>
-      <p>{job_description}</p>
-      <p>${rate}/hour</p>
-      <p>{experience}</p>
-      <p>{company}</p>
-      <p>{industry}</p>
-      <p>{user}</p>
+      <p>Job Title: {job_title}</p>
+      <p>Job Description: {job_description}</p>
+      <p>Rate: ${rate}/hour</p>
+      <p>Experience Level: {experience}</p>
+      <p>Company Size: {company}</p>
+      <p>Industry Type: {industry}</p>
+      <p>Username: {user}</p>
     </article>
     { editJobForm
     ? <EditJobForm id={id} setEditJobForm={setEditJobForm} editJobForm={editJobForm} userJobs={userJobs} setUserJobs={setUserJobs} prefillJobTitle={job_title} prefillJobDescription={job_description} prefillRate={rate} prefillExperience={experience} prefillIndustry={industryID} prefillCompany={companyID}/>

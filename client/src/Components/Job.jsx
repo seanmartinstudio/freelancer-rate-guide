@@ -5,12 +5,12 @@ const Job = ( {job, company, industry, user} ) => {
 
   return (
   <article>
-    <p>{job_title}</p>
-    <p>{job_description}</p>
-    <p>${rate}/hour</p>
-    <p>{experience}</p>
-    <p>{company}</p>
-    <p>{industry}</p>
+    <p>Job Title: {job_title}</p>
+    <p>Job Description: {job_description}</p>
+    <p>Rate: ${rate}/hour</p>
+    <p>Experience Level: {experience}</p>
+    <p>Company Size: {company}</p>
+    <p>Industry Type: {industry}</p>
     {/* <p>{user}</p> */}
   </article>
   )
