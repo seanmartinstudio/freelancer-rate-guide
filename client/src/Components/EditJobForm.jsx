@@ -47,7 +47,7 @@ const EditJobForm = ( {id, editJobForm, setEditJobForm, userJobs, setUserJobs, p
             company_id: parseInt(company),
             industry_id: parseInt(industry)
           })
-          .then(setEditJobForm(!editJobForm))
+          .then(() => {setEditJobForm(!editJobForm)})
           .catch(error => {
             setErrors(error.response.data.errors)
             setJobTitle("")
