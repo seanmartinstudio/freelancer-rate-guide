@@ -66,13 +66,40 @@ fieldset {
   border-radius: 15px;
 }
 
-button {
+/* button {
   padding: 12px 20px;
   background-color: black;
   color: white;
   margin: 5px;
   border-style: none;
   border-radius: 15px;  
+} */
+
+button {
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #000000;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 #000000;
+}
+
+button:hover {
+  color: white;
+  box-shadow: inset 0 -100px 0 0 #000000;
+}
+
+button:active {
+  transform: scale(0.9);
 }
 
 
