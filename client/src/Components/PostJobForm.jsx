@@ -25,12 +25,7 @@ const PostJobForm = ( {industries, companies}) => {
             company_id: parseInt(company),
             industry_id: parseInt(industry)
           })
-          .then(response => {
-            if(response.statusText === "Created") {
-              navigate('/')
-            }
-            console.log("Response from Post:", response)
-          })
+          .then(navigate('/'))
           .catch(error => {
             setErrors(error.response.data.errors)
             setJobTitle("")
