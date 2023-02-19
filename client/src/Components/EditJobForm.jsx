@@ -3,16 +3,16 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom"
 
 
-const EditJobForm = ( {id, editJobForm, setEditJobForm, userJobs, setUserJobs} ) => {
+const EditJobForm = ( {id, editJobForm, setEditJobForm, userJobs, setUserJobs, prefillJobTitle, prefillJobDescription, prefillRate, prefillExperience, prefillIndustry, prefillCompany} ) => {
 
     const navigate = useNavigate()
 
-    const [jobTitle, setJobTitle] = useState("")
-    const [jobDescription, setJobDescription] = useState("")
-    const [rate, setRate] = useState(undefined)
-    const [experience, setExperience] = useState("")
-    const [industry, setIndustry] = useState("")
-    const [company, setCompany] = useState("")
+    const [jobTitle, setJobTitle] = useState(prefillJobTitle)
+    const [jobDescription, setJobDescription] = useState(prefillJobDescription)
+    const [rate, setRate] = useState(prefillRate)
+    const [experience, setExperience] = useState(prefillExperience)
+    const [industry, setIndustry] = useState(prefillIndustry)
+    const [company, setCompany] = useState(prefillCompany)
     const [errors, setErrors] = useState([])
 
     const [companies, setCompanies] = useState([])

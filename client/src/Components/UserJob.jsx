@@ -2,7 +2,7 @@ import React from 'react'
 import { useState} from 'react';
 import EditJobForm from './EditJobForm';
 
-const UserJob = ( {job, company, industry, user, id , handleDeleteUserJob, userJobs, setUserJobs} ) => {
+const UserJob = ( {job, company, industry, industryID, companyID, user, id , handleDeleteUserJob, userJobs, setUserJobs} ) => {
   const {job_title, job_description, rate, experience} = job
 
   const [editJobForm, setEditJobForm] = useState(false)
@@ -36,7 +36,7 @@ const UserJob = ( {job, company, industry, user, id , handleDeleteUserJob, userJ
       <p>{user}</p>
     </article>
     { editJobForm
-    ? <EditJobForm id={id} setEditJobForm={setEditJobForm} editJobForm={editJobForm} userJobs={userJobs} setUserJobs={setUserJobs}/>
+    ? <EditJobForm id={id} setEditJobForm={setEditJobForm} editJobForm={editJobForm} userJobs={userJobs} setUserJobs={setUserJobs} prefillJobTitle={job_title} prefillJobDescription={job_description} prefillRate={rate} prefillExperience={experience} prefillIndustry={industryID} prefillCompany={companyID}/>
     : <div/>
     }
   </div>
