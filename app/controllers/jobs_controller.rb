@@ -1,22 +1,26 @@
 class JobsController < ApplicationController
-  # require 'byebug'
+  require 'byebug'
 
     #READ
-    #HomePage Endpoint
+    #HomePage endpoint
     def index 
       jobs = Job.all 
       render json: jobs.reverse_order
     end
 
+
     #SHOW
+    #Potential new HomePage endpoint
     def search
-      title = params[:string].capitalize
-      jobs = Job.where(job_title: title)
+      title = params[:string].titleize
+      jobs = Job.where(job_title: title) 
       render json: jobs
     end
 
+    #SHOW
+
     #CREATE
-    #PostJobPage Endpoint
+    #PostJobPage endpoint
     def create 
         user = User.find_by(id: session[:user_id])
         if user
@@ -32,6 +36,7 @@ class JobsController < ApplicationController
     end
 
     #UPDATE
+    #EditJobForm endpoint
     def update
       user = User.find_by(id: session[:user_id])
       if user
@@ -50,7 +55,7 @@ class JobsController < ApplicationController
       else
           render json: { errors: ["Not Authorized"] }, status: :unauthorized
       end
-  end
+    end
 
     #DESTROY
     def destroy 
@@ -67,7 +72,7 @@ class JobsController < ApplicationController
       else
           render json: { errors: ["Not Authorized"] }, status: :unauthorized
       end
-  end
+    end
 
     
   
