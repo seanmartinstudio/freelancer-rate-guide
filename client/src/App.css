@@ -78,8 +78,8 @@ fieldset {
 button {
   position: relative;
   display: inline-block;
-  margin: 15px;
-  padding: 15px 30px;
+  margin: 10px;
+  padding: 10px 20px;
   text-align: center;
   font-size: 18px;
   letter-spacing: 1px;
@@ -89,7 +89,7 @@ button {
   cursor: pointer;
   transition: ease-out 0.5s;
   border: 2px solid #000000;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: inset 0 0 0 0 #000000;
 }
 
