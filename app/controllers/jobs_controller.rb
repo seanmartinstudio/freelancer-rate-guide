@@ -15,10 +15,10 @@ class JobsController < ApplicationController
       title = params[:string].titleize
       if title == "All"
         jobs_all = Job.all
-        render json: jobs_all
+        render json: jobs_all.reverse_order
       else
         jobs = Job.where(job_title: title) 
-        render json: jobs
+        render json: jobs.reverse_order
     end
   end
 
