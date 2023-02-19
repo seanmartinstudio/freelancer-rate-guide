@@ -13,9 +13,14 @@ class JobsController < ApplicationController
     #Potential new HomePage endpoint
     def search
       title = params[:string].titleize
-      jobs = Job.where(job_title: title) 
-      render json: jobs
+      if title == "All"
+        jobs_all = Job.all
+        render json: jobs_all
+      else
+        jobs = Job.where(job_title: title) 
+        render json: jobs
     end
+  end
 
     #SHOW
 
