@@ -2,6 +2,8 @@
   text-align: center;
 }
 
+
+
 li {
   list-style: none;
 }
@@ -118,7 +120,7 @@ article {
   margin: 15px;
   padding: 15px; 
   font-weight: normal;
-  transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;  
 }
 
 article:hover {

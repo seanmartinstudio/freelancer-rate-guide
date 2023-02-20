@@ -32,11 +32,11 @@ function App() {
         {user ? <NavBar/> : null}
       </nav>
       <Routes>
-      <Route exact path="/" element={user ? <HomePage /> : <LandingPage />} />
-      <Route exact path="/login" element={<LoginPage/>} />
-      <Route exact path="/signup" element={<SignupPage/>} />
-      <Route exact path="/post" element={<PostJobPage/>} />
-      <Route exact path="/user" element={<UserJobsPage/>} />
+      <Route path="/" element={user ? <HomePage /> : <LandingPage />} />
+      <Route path="/login" element={<LoginPage/>} />
+      <Route path="/signup" element={<SignupPage/>} />
+      <Route path="/post" element={<PostJobPage/>} />
+      <Route path="/user" element={<UserJobsPage/>} />
       </Routes>
     </UserContext.Provider>
   );

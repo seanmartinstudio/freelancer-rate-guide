@@ -53,11 +53,11 @@ const LoginPage = () => {
   <br></br>
   <br></br>
   <ul>
-  <div>
+  <ul>
   {errors.map((error) => (
-      <p key={error}>{error}</p>
+      <li key={error}>{error}</li>
     ))}
-  </div>
+  </ul>
   </ul>
 </form>
 )
