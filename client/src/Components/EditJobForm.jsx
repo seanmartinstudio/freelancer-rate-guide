@@ -80,7 +80,7 @@ const EditJobForm = ( {id, editJobForm, setEditJobForm, userJobs, setUserJobs, p
     
 return (
     <form onSubmit={handleFormSubmit}>
-        <h2>Edit Job Post:</h2>
+        {/* <h2>Edit Post</h2> */}
 
         <select name="jobtitle" id="jobtitle" value={jobTitle} onChange={(event) => setJobTitle(event.target.value)} >
         <option id="jobtitles" value="">Job Title...</option>
@@ -112,7 +112,7 @@ return (
         </select>
 
         <br></br>
-        <button className='button'>Submit</button>
+        <button className='button'>Submit Edit</button>
         <br></br>
         <br></br>
         <ul>

@@ -29,7 +29,7 @@ const PostJobPage = () => {
 
   return (
     <div>
-      <h2>Post New Job:</h2>
+      {/* <h2>Post New Job:</h2> */}
     <PostJobForm companies={companies} industries={industries}  />
     </div>
   )

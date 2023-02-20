@@ -4,7 +4,7 @@ import JobsContainer from '../Components/JobsContainer'
 const HomePage = () => {
   return (
     <div>
-      <h2>All Job Posts:</h2>
+      {/* <h2>All Job Posts:</h2> */}
     <JobsContainer/>
     </div>
   )
