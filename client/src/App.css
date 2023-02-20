@@ -138,6 +138,7 @@ article {
   padding: 20px; 
   font-weight: normal;
   transition: all 0.1s ease-out;  
+  box-shadow: .4rem .4rem #05060f;
 }
 
 article:hover {
@@ -215,6 +216,11 @@ p {
   padding: 20px; 
   font-weight: normal;
   transition: all 0.1s ease-out;  
+}
+
+.opening-card:hover {
+  background-color: #000000;
+  color: white;
 }
 
 @media (prefers-reduced-motion: no-preference) {
