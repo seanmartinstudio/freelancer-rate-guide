@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   get '/jobs_search/:string', to: 'jobs#search', as: 'search'
   get '/user_jobs', to: 'jobs#search_by_user', as: 'search_by_user'
 
-  # get '/category_tasks/:int', to: 'categories#category_tasks'
+  
+  #Handles URL routing when deployed
+  get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
  
 end
