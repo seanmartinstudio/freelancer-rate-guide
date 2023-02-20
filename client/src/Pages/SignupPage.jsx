@@ -27,11 +27,7 @@ const SignupPage = () => {
       password: password,
       email: email
     })
-    .then(response => {
-      if(response.statusText === "Created") {
-        navigate('/login')
-      }
-    })
+    .then(navigate('/login'))
     .catch(error => {
       setErrors(error.response.data.errors)
       // console.log("Error:", error)
