@@ -26,7 +26,7 @@ const PostJobForm = ( {industries, companies}) => {
             industry_id: parseInt(industry)
           })
           .then(response => {
-            if(response.statusText === "Created") {
+            if(response.status === 201) {
               navigate('/')
             }
             console.log("Response from Post:", response)
