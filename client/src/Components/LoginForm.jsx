@@ -24,7 +24,7 @@ const LoginForm = ( {setUser, setShowLogin} ) => {
 
   return (
     <form onSubmit={handleFormSubmit}>
-    <h2>Login Page</h2>
+    <h2>Login!</h2>
     <input type="text" id="username" name="username" placeholder="Username" onChange={(event) => setUsername(event.target.value)} value={username}></input>
     <input type="text" id="password" name="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} value={password}></input>
     <br></br>
