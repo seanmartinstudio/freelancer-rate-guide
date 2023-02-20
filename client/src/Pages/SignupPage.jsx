@@ -47,7 +47,7 @@ const SignupPage = () => {
   
   return (
     <form onSubmit={handleFormSubmit}>
-    <h2>Signup!</h2>
+    <h2>Sign Up!</h2>
     <input type="text" id="username" name="username" placeholder="Username" onChange={(event) => setUsername(event.target.value)} value={username}></input>
     <input type="text" id="password" name="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} value={password}></input>
     <input type="text" id="email" name="email" placeholder="Email" onChange={(event) => setEmail(event.target.value)} value={email}></input>
