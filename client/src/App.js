@@ -35,8 +35,8 @@ function App() {
       <Route path="/" element={user ? <HomePage /> : <LandingPage />} />
       <Route path="/login" element={<LoginPage/>} />
       <Route path="/signup" element={<SignupPage/>} />
-      <Route path="/post" element={<PostJobPage/>} />
-      <Route path="/user" element={<UserJobsPage/>} />
+      <Route path="/create-job-post" element={<PostJobPage/>} />
+      <Route path="/user-job-posts" element={<UserJobsPage/>} />
       </Routes>
     </UserContext.Provider>
   );
