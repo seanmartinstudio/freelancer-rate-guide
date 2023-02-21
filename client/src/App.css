@@ -40,6 +40,11 @@ h3 {
   box-shadow: .4rem .4rem #05060f;
 }
 
+.about-page:hover {
+  background-color: #000000;
+  color: white;
+}
+
 .title {
 font-weight: bold;
 }
