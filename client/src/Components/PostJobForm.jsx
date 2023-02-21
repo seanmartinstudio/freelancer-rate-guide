@@ -33,10 +33,6 @@ const PostJobForm = ( {industries, companies}) => {
           })
           .catch(error => {
             setErrors(error.response.data.errors)
-            setJobTitle("")
-            setJobDescription("")
-            setRate(null)
-            setExperience("")
           })
         }
 
