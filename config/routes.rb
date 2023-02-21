@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   #JOBS
   get '/jobs_search/:string', to: 'jobs#search', as: 'search'
   get '/user_jobs', to: 'jobs#search_by_user', as: 'search_by_user'
+  get '/jobs/filter/:jobtitle/:rate', to: 'jobs#filter', as: 'filter'
 
   
   #Handles URL routing when deployed

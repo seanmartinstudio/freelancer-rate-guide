@@ -23,6 +23,17 @@ class JobsController < ApplicationController
   end
 
     #SHOW
+    def filter 
+      job_param = params[:jobtitle].capitalize
+      rate_param = params[:rate].to_f
+      jobs = Job.where(job_title: job_param)
+      job_matches = jobs.filter { |job| job.rate <= rate_param }
+        if job_matches != []
+          render json: job_matches
+        else
+          render json: ["No Matches Found"]
+        end
+      end
 
     #CREATE
     #PostJobPage endpoint
