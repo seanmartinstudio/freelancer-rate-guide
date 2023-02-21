@@ -12,6 +12,7 @@ const SignupPage = () => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [email, setEmail] = useState("")
+  const [avatarFile, setAvatarFile] = useState(null);
   const [errors, setErrors] = useState([])
 
   useEffect(() => {
@@ -25,7 +26,8 @@ const SignupPage = () => {
     axios.post('/users', {
       username: username,
       password: password,
-      email: email
+      email: email,
+      avatar: avatarFile
     })
     .then(response => {
       if(response.status === 201) {
@@ -42,6 +44,10 @@ const SignupPage = () => {
   const navigatToLoginPage = () => {
     navigate("/login")
   }
+
+  const handleAvatarChange = (event) => {
+    setAvatarFile(event.target.files[0]);
+  };
   
   return (
     <form onSubmit={handleFormSubmit}>
@@ -49,6 +55,7 @@ const SignupPage = () => {
     <input type="text" id="username" name="username" placeholder="Username" onChange={(event) => setUsername(event.target.value)} value={username}></input>
     <input type="text" id="password" name="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} value={password}></input>
     <input type="text" id="email" name="email" placeholder="Email" onChange={(event) => setEmail(event.target.value)} value={email}></input>
+    <input type="file" accept="image/*" id="avatar" name="avatar" placeholder="Avatar" onChange={handleAvatarChange}></input>
     <br></br>
     <button className="button">Sign Up</button>
     <br></br>

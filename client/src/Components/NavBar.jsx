@@ -8,6 +8,8 @@ const NavBar = () => {
   const navigate = useNavigate()
   const [user, setUser] = useContext(UserContext)
 
+  console.log("Avatar:", user.avatar)
+
   function handleLogoutClick() {
     fetch("/logout", { method: "DELETE" }).then((response) => {
         if (response.ok) {

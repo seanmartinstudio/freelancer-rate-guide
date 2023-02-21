@@ -1,16 +1,26 @@
 class UsersController < ApplicationController
   # require 'byebug'
 
-    #SignupForm end point
+    #SignupForm end point (THIS ONE IS THE REAL ONE)
     #POST '/signup'
+    # def create 
+    #     user = User.create(user_params)
+    #     if user.valid?
+    #       render json: user, except:[:password], status: :created
+    #     else
+    #       render json: { errors: user.errors.full_messages }, status: :unauthorized
+    #     end
+    # end
+
     def create 
-        user = User.create(user_params)
-        if user.valid?
-          render json: user, except:[:password], status: :created
-        else
-          render json: { errors: user.errors.full_messages }, status: :unauthorized
-        end
-    end
+      user = User.create(user_params)
+      user.avatar.attach(params[:avatar])
+      if user.valid?
+        render json: user, except:[:password], status: :created
+      else
+        render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+      end
+  end
 
     # def avatar 
     #   user = User.find_by(user_id: session[:user_id])

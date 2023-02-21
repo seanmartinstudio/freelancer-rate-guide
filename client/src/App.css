@@ -98,6 +98,14 @@ input[type=number] {
   transition: all 0.1s ease-out; 
 }
 
+input[type=file] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 15px;
+  transition: all 0.1s ease-out; 
+}
+
 input:hover {
   background-color: #000000;
   color: white;
