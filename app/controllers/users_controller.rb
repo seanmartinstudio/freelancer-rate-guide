@@ -12,7 +12,10 @@ class UsersController < ApplicationController
         end
     end
 
-
+    # def avatar 
+    #   user = User.find_by(user_id: session[:user_id])
+    #   user.avatar.attach(params[:avatar])
+    # end
 
   #UserJobs Endpoint
   def index
