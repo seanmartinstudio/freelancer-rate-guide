@@ -33,6 +33,10 @@ const NavBar = () => {
         <button  type='button'  className={activePage === 'user-job-posts' ? 'active' : ''}
             onClick={() => handleNavigationClick('user-job-posts')}>User Job Posts</button>
         </Link>
+        <Link to="how-to">
+        <button  type='button'  className={activePage === 'about' ? 'active' : ''}
+            onClick={() => handleNavigationClick('about')}>How To Use This Site</button>
+        </Link>
         <button className="button" type="button" onClick={handleLogoutClick}>Log Out</button>
     </nav>
   )

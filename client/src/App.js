@@ -10,6 +10,7 @@ import './App.css'
 import PostJobPage from './Pages/PostJobPage';
 import UserJobsPage from './Pages/UserJobsPage';
 import { WavyContainer, WavyLink } from "react-wavy-transitions";
+import AboutPage from './Pages/AboutPage';
 
 export const UserContext = createContext()
 
@@ -37,6 +38,7 @@ function App() {
       <Route path="/signup" element={<SignupPage/>} />
       <Route path="/create-job-post" element={<PostJobPage/>} />
       <Route path="/user-job-posts" element={<UserJobsPage/>} />
+      <Route path='how-to' element={<AboutPage/>} />
       </Routes>
     </UserContext.Provider>
   );

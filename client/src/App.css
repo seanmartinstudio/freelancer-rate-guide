@@ -24,6 +24,22 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  text-decoration: underline;
+}
+
+.about-page {
+  align-items: center;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 15px;
+  margin: 20px;
+  padding: 20px; 
+  font-weight: normal;
+  transition: all 0.1s ease-out;  
+  box-shadow: .4rem .4rem #05060f;
+}
+
 .title {
 font-weight: bold;
 }
