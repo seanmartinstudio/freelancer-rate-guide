@@ -31,8 +31,6 @@ const LoginPage = () => {
     })
     .catch(error => {
       setErrors(error.response.data.errors)
-      setUsername("")
-      setPassword("")
     });
   }
 
