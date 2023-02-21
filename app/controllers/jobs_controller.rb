@@ -26,10 +26,15 @@ class JobsController < ApplicationController
     def filter 
       job_param = params[:jobtitle].titleize
       rate_param = params[:rate].to_f
-      jobs = Job.where(job_title: job_param).reverse_order
-      job_matches = jobs.filter { |job| job.rate <= rate_param }
-      render json: job_matches
+      if job_param == "All" && rate_param == 1000
+        jobs_all = Job.all.reverse_order
+        render json: jobs_all
+      else
+        jobs = Job.where(job_title: job_param).reverse_order
+        job_matches = jobs.filter { |job| job.rate <= rate_param }
+        render json: job_matches
       end
+    end
 
     #CREATE
     #PostJobPage endpoint

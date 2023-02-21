@@ -4,8 +4,8 @@ import JobSearchBar from './JobSearchBar'
 import axios from 'axios'
 
 const JobsContainer = () => {
-    const [jobTitle, setJobTitle] = useState("")
-    const [rate, setRate] = useState(500)
+    const [jobTitle, setJobTitle] = useState("All")
+    const [rate, setRate] = useState(1000)
     const[jobs, setJobs] = useState([])
   
   useEffect(() => {
@@ -40,12 +40,12 @@ const JobsContainer = () => {
     <section>
         <form>
        <select name="jobtitle" id="jobtitle" value={jobTitle} onChange={(event) => setJobTitle(event.target.value)} >
-        {/* <option id="jobtitles" value="All">All Job Titles</option> */}
+        <option id="jobtitles" value="All">All Job Titles</option>
         {jobTitleOptions}
         </select>
 
         <select name="rate" id="rate" value={rate} onChange={(event) => setRate(event.target.value)} >
-        {/* <option id="rate" value="All">All Job Titles</option> */}
+        <option id="rate" value='1000'>All Rates</option>
         {rateOptions}
         </select>
    </form>
