@@ -33,7 +33,7 @@ class JobsController < ApplicationController
         render json: jobs_all_matches
       else
         jobs = Job.where(job_title: job_param).reverse_order
-        job_matches = jobs.filter { |job| job.rate <= rate_param }
+        job_matches = jobs.filter { |job| job.rate >= rate_param }
         render json: job_matches
       end
     end
