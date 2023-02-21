@@ -5,8 +5,9 @@ import axios from 'axios'
 
 const JobsContainer = () => {
     const [jobTitle, setJobTitle] = useState("All")
-    const [rate, setRate] = useState(1000)
+    const [rate, setRate] = useState(500)
     const[jobs, setJobs] = useState([])
+    const [isDisabled, setIsDisabled] = useState(true)
   
   useEffect(() => {
     axios.get('/jobs/filter/' + jobTitle + '/' + parseInt(rate))
@@ -25,11 +26,13 @@ const JobsContainer = () => {
         <option>{job}</option>
         )
 
-  const rateArr = [50, 100, 200, 300, 400, 500]
+  const rateArr = [500, 400, 300, 200, 100]
 
   const rateOptions = rateArr.map((rate) =>
   <option>{rate}</option>
   )
+
+
 
     console.log("Drop Down Job Title:", jobTitle)
     console.log("Drop Down Rate:", parseInt(rate))
@@ -44,8 +47,8 @@ const JobsContainer = () => {
         {jobTitleOptions}
         </select>
 
-        <select name="rate" id="rate" value={rate} onChange={(event) => setRate(event.target.value)} >
-        <option id="rate" value='1000'>All Rates</option>
+        <select name="rate" id="rate" value={rate}  onChange={(event) => setRate(event.target.value)} >
+        {/* <option id="rate" value='500'>All Rates</option> */}
         {rateOptions}
         </select>
    </form>

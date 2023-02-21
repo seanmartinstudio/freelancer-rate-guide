@@ -9,26 +9,28 @@ class JobsController < ApplicationController
     end
 
 
-    #SHOW
-    #Potential new HomePage endpoint
-    def search
-      title = params[:string].titleize
-      if title == "All"
-        jobs_all = Job.all.reverse_order
-        render json: jobs_all
-      else
-        jobs = Job.where(job_title: title) 
-        render json: jobs.reverse_order
-    end
-  end
+  #   #SHOW
+  #   #Potential new HomePage endpoint
+  #   def search
+  #     title = params[:string].titleize
+  #     if title == "All"
+  #       jobs_all = Job.all.reverse_order
+  #       render json: jobs_all
+  #     else
+  #       jobs = Job.where(job_title: title) 
+  #       render json: jobs.reverse_order
+  #   end
+  # end
 
-    #SHOW
+    #GET
+    #HomePage endpoint
     def filter 
       job_param = params[:jobtitle].titleize
       rate_param = params[:rate].to_f
-      if job_param == "All" && rate_param == 1000
+      if job_param == "All"
         jobs_all = Job.all.reverse_order
-        render json: jobs_all
+        jobs_all_matches = jobs_all.filter { |job| job.rate <= rate_param }
+        render json: jobs_all_matches
       else
         jobs = Job.where(job_title: job_param).reverse_order
         job_matches = jobs.filter { |job| job.rate <= rate_param }
