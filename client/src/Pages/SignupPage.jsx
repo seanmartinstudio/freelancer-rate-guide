@@ -27,13 +27,15 @@ const SignupPage = () => {
       password: password,
       email: email
     })
-    .then(navigate('/login'))
+    .then(response => {
+      if(response.status === 201) {
+        navigate('/login')
+      }
+      console.log("Response from Post:", response)
+    })
     .catch(error => {
       setErrors(error.response.data.errors)
-      // console.log("Error:", error)
-      setUsername("")
-      setPassword("")
-      setEmail("")
+      console.log("Sign Up Error:", error)
     })
   }
 
