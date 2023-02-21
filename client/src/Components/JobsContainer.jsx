@@ -26,10 +26,10 @@ const JobsContainer = () => {
         <option>{job}</option>
         )
 
-  const rateArr = [500, 400, 300, 200, 100]
+  const rateArr = [500, 400, 300, 200, 100, 50, 25]
 
   const rateOptions = rateArr.map((rate) =>
-  <option>{rate}</option>
+  <option value={rate}>${rate}/hour or less</option>
   )
 
 
