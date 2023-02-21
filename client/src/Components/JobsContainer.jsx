@@ -52,7 +52,7 @@ const JobsContainer = () => {
         <br></br>
         <br></br>
 
-        <label for='rate' className='title'>Search By Hourly Rate</label>
+        <label for='rate' className='title'>Search By Hourly Rate:</label>
         <br></br>
         <select name="rate" id="rate" value={rate}  onChange={(event) => setRate(event.target.value)} >
         {/* <option id="rate" value='500'>All Rates</option> */}
