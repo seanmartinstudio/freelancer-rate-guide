@@ -50,10 +50,10 @@ const EditJobForm = ( {id, editJobForm, setEditJobForm, userJobs, setUserJobs, p
           .then(() => {setEditJobForm(!editJobForm)})
           .catch(error => {
             setErrors(error.response.data.errors)
-            setJobTitle("")
-            setJobDescription("")
-            setRate(null)
-            setExperience("")
+            // setJobTitle("")
+            // setJobDescription("")
+            // setRate(null)
+            // setExperience("")
           })
         }
 
