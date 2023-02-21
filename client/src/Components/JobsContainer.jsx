@@ -40,13 +40,20 @@ const JobsContainer = () => {
 
   return (
     <div>
+      <br></br>
     <section>
         <form>
+        <label for='jobtitle' className='title'>Search By Job Title:</label>
+        <br></br>
        <select name="jobtitle" id="jobtitle" value={jobTitle} onChange={(event) => setJobTitle(event.target.value)} >
         <option id="jobtitles" value="All">All Job Titles</option>
         {jobTitleOptions}
         </select>
+        <br></br>
+        <br></br>
 
+        <label for='rate' className='title'>Search By Hourly Rate</label>
+        <br></br>
         <select name="rate" id="rate" value={rate}  onChange={(event) => setRate(event.target.value)} >
         {/* <option id="rate" value='500'>All Rates</option> */}
         {rateOptions}
