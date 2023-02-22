@@ -22,6 +22,11 @@ const UserJob = ( {job, company, industry, industryID, companyID, user, id , han
 
   return (
   <div>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+  <div>
     <div className='sideButtonWrap'>
     <button class="side-button" onClick={handleClick}>Edit</button>
     <button class="side-button" onClick={handleUserJobDeleteClick}>Delete</button>
@@ -39,6 +44,7 @@ const UserJob = ( {job, company, industry, industryID, companyID, user, id , han
     ? <EditJobForm id={id} setEditJobForm={setEditJobForm} editJobForm={editJobForm} userJobs={userJobs} setUserJobs={setUserJobs} prefillJobTitle={job_title} prefillJobDescription={job_description} prefillRate={rate} prefillExperience={experience} prefillIndustry={industryID} prefillCompany={companyID}/>
     : <div/>
     }
+  </div>
   </div>
   )
 }
