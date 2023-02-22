@@ -1,13 +1,17 @@
 import React from 'react'
-import { useState } from "react";
+import { useState, useContext } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import { UserContext } from '../App'
 
 const AddAvatarPage = () => {
 
     const navigate = useNavigate()
     const [avatarFile, setAvatarFile] = useState(null);
     console.log("Add Avatar Page Avatar State:", avatarFile)
+    const [user, setUser] = useContext(UserContext)
+
+    
 
 const handleAvatarChange = (event) => {
     setAvatarFile(event.target.files[0]);
@@ -18,11 +22,11 @@ const handleFormSubmit = (event) => {
     formData.append('avatar', avatarFile);
 
     event.preventDefault()
-    axios.post('/avatar', 
+    axios.post('/add_avatar/' + user.id, 
       formData
     )
     .then(response => {
-      if(response.status === 201) {
+      if(response.status === 200) {
         navigate('/')
       }
     })
@@ -39,7 +43,7 @@ const handleFormSubmit = (event) => {
     <li>Add Optional Avatar Photo</li>
     <input type="file" accept="image/*" id="avatar" name="avatar" placeholder="Avatar" onChange={handleAvatarChange}></input>
     <br></br>
-    <button className="button">Sign Up</button>
+    <button className="button">Add Photo</button>
     </form>
   )
 }

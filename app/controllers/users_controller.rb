@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # require 'byebug'
+  require 'byebug'
 
     #SignupForm end point (THIS IS THE ACTIVE ONE FOR THE RECORD)
     #POST '/signup'
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     #SignupForm end point
     def create 
       user = User.create(user_params)
-      user.avatar.attach(params[:avatar])
+      # user.avatar.attach(params[:avatar])
       if user.valid?
         render json: user, except:[:password], status: :created
       else
@@ -43,10 +43,17 @@ class UsersController < ApplicationController
     render json: { avatar: rails_blob_path(user.avatar) }
   end
 
+  def add_avatar
+    user = User.find_by(id: params[:id])
+    if user
+    user.avatar.attach(params[:avatar])
+    end
+  end
+
   private
 
   def user_params
-      params.permit(:username, :password, :email, :avatar)
+      params.permit(:username, :password, :email)
   end
 
 end

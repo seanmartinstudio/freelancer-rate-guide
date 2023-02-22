@@ -10,8 +10,8 @@ const NavBar = () => {
   const [user, setUser] = useContext(UserContext)
   const [avatar, setAvatar] = useState(null)
 
-  console.log("Nav User:", user)
-  console.log("Avatar", avatar)
+  // console.log("Nav User:", user)
+  // console.log("Avatar", avatar)
 
   useEffect(() => {
     axios.get('/avatar')

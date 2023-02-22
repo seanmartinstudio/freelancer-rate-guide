@@ -22,13 +22,13 @@ function App() {
   .then(function (response) {
     if(response.status === 200) {
    setUser(response.data) }
-   console.log("App JS Set User", user)
+  //  console.log("App JS Set User", user)
   })
   .then(function () {
-    console.log("App Js User:", user)
+    // console.log("App Js User:", user)
   })
   .catch(function (error) {
-    console.log("App.js Error ->", error);
+    // console.log("App.js Error ->", error);
   })
   }, []);
 

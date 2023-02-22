@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/me', to: 'users#show'
   get 'logged_user', to: 'users#logged_user'
   get 'avatar', to: 'users#avatar'
+  post '/add_avatar/:id', to: 'users#add_avatar'
 
   #SESSIONS
   post '/login', to: 'sessions#create'
