@@ -9,7 +9,6 @@ import SignupPage from './Pages/SignupPage'
 import './App.css'
 import PostJobPage from './Pages/PostJobPage';
 import UserJobsPage from './Pages/UserJobsPage';
-import { WavyContainer, WavyLink } from "react-wavy-transitions";
 import AboutPage from './Pages/AboutPage';
 
 export const UserContext = createContext()

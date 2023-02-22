@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import Job from './Job'
-import JobSearchBar from './JobSearchBar'
+// import JobSearchBar from './JobSearchBar'
 import axios from 'axios'
 
 const JobsContainer = () => {
     const [jobTitle, setJobTitle] = useState("All")
     const [rate, setRate] = useState(500)
     const[jobs, setJobs] = useState([])
-    const [isDisabled, setIsDisabled] = useState(true)
+    // const [isDisabled, setIsDisabled] = useState(true)
   
   useEffect(() => {
     axios.get('/jobs/filter/' + jobTitle + '/' + parseInt(rate))

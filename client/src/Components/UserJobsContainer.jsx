@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 import UserJob from './UserJob'
-import { UserContext } from '../App'
+// import { UserContext } from '../App'
 
 const UserJobsContainer = ( {} ) => {
 
   const[userJobs, setUserJobs] = useState([])
-  const [user, setUser] = useContext(UserContext)
+  // const [user, setUser] = useContext(UserContext)
 
   useEffect(() => {
     axios.get('/users')

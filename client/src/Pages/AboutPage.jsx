@@ -3,6 +3,9 @@ import React from 'react'
 const AboutPage = () => {
   return (
     <div>
+        <br></br>
+        <br></br>
+        <br></br>
     <div className='about-page'>
         <h3>All Jobs Post</h3>
         <ul>

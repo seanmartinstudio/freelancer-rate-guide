@@ -58,7 +58,9 @@ const NavBar = () => {
         </Link>
         <button className="button" type="button" onClick={handleLogoutClick}>Log Out</button>
         <figure>
-        <img src={avatar} alt='user-avatar' className='image'></img>
+        <div>
+          {avatar ? <img src={avatar} alt='user-avatar' className='image'></img> : null }
+        </div>
         <div className='avatar-text-container'>
         <figcaption>Welcome</figcaption>
         <figcaption>{user.username}</figcaption>

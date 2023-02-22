@@ -21,8 +21,6 @@ const SignupPage = () => {
     }
   })
 
-  
-
   const handleFormSubmit = (event) => {
 
     const formData = new FormData();
@@ -39,12 +37,12 @@ const SignupPage = () => {
       if(response.status === 201) {
         navigate('/login')
       }
-      console.log("Response from Post:", response)
     })
-    .catch(error => {
-      setErrors(error.response.data.errors)
+    .catch(() => {
+      setErrors(["Username, Password and Email cannot be blank."])
     })
   }
+  
 
   const navigatToLoginPage = () => {
     navigate("/login")
@@ -62,7 +60,11 @@ const SignupPage = () => {
     <input type="text" id="username" name="username" placeholder="Username" onChange={(event) => setUsername(event.target.value)} value={username}></input>
     <input type="text" id="password" name="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} value={password}></input>
     <input type="text" id="email" name="email" placeholder="Email" onChange={(event) => setEmail(event.target.value)} value={email}></input>
+    <br></br>
+    <br></br>
+    <li>Add Optional Avatar Photo</li>
     <input type="file" accept="image/*" id="avatar" name="avatar" placeholder="Avatar" onChange={handleAvatarChange}></input>
+    <br></br>
     <br></br>
     <button className="button">Sign Up</button>
     <br></br>
