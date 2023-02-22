@@ -29,6 +29,7 @@ class UsersController < ApplicationController
       end
   end
 
+
   #UserJobs Endpoint
   def index
     user = User.find_by(id: session[:user_id])
@@ -39,7 +40,9 @@ class UsersController < ApplicationController
 
   def avatar
     user = User.find_by(id: session[:user_id])
-    render json: { avatar: rails_blob_path(user.avatar) }
+    if user
+    user.avatar.attach(params[:avatar])
+    end
   end
 
   private

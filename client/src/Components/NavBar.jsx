@@ -56,6 +56,10 @@ const NavBar = () => {
         <button  type='button'  className={activePage === 'about' ? 'active' : ''}
             onClick={() => handleNavigationClick('about')}>How To Use This Site</button>
         </Link>
+        <Link to="add-avatar">
+        <button  type='button'  className={activePage === 'add-avatar' ? 'active' : ''}
+            onClick={() => handleNavigationClick('add-avatar')}>Add Avatar</button>
+        </Link>
         <button className="button" type="button" onClick={handleLogoutClick}>Log Out</button>
         <figure>
         <div>

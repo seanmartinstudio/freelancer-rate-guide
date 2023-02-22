@@ -10,6 +10,7 @@ import './App.css'
 import PostJobPage from './Pages/PostJobPage';
 import UserJobsPage from './Pages/UserJobsPage';
 import AboutPage from './Pages/AboutPage';
+import AddAvatarPage from './Pages/AddAvatarPage';
 
 export const UserContext = createContext()
 
@@ -21,6 +22,7 @@ function App() {
   .then(function (response) {
     if(response.status === 200) {
    setUser(response.data) }
+   console.log("App JS Set User", user)
   })
   .then(function () {
     console.log("App Js User:", user)
@@ -44,6 +46,7 @@ function App() {
       <Route path="/create-job-post" element={<PostJobPage/>} />
       <Route path="/user-job-posts" element={<UserJobsPage/>} />
       <Route path='how-to' element={<AboutPage/>} />
+      <Route path='add-avatar' element={<AddAvatarPage/>} />
       </Routes>
     </UserContext.Provider>
   );
