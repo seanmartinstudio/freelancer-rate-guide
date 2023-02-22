@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   # require 'byebug'
 
-    #SignupForm end point (THIS ONE IS THE REAL ONE)
+    #SignupForm end point (THIS IS THE ACTIVE ONE FOR THE RECORD)
     #POST '/signup'
     # def create 
     #     user = User.create(user_params)
@@ -21,11 +21,6 @@ class UsersController < ApplicationController
         render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
       end
   end
-
-    # def avatar 
-    #   user = User.find_by(user_id: session[:user_id])
-    #   user.avatar.attach(params[:avatar])
-    # end
 
   #UserJobs Endpoint
   def index

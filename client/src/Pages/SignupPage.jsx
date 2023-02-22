@@ -21,14 +21,20 @@ const SignupPage = () => {
     }
   })
 
+  
+
   const handleFormSubmit = (event) => {
+
+    const formData = new FormData();
+    formData.append('username', username);
+    formData.append('password', password);
+    formData.append('email', email);
+    formData.append('avatar', avatarFile);
+
     event.preventDefault();
-    axios.post('/users', {
-      username: username,
-      password: password,
-      email: email,
-      avatar: avatarFile
-    })
+    axios.post('/users', 
+      formData
+    )
     .then(response => {
       if(response.status === 201) {
         navigate('/login')
@@ -37,7 +43,6 @@ const SignupPage = () => {
     })
     .catch(error => {
       setErrors(error.response.data.errors)
-      console.log("Sign Up Error:", error)
     })
   }
 
@@ -48,6 +53,8 @@ const SignupPage = () => {
   const handleAvatarChange = (event) => {
     setAvatarFile(event.target.files[0]);
   };
+
+  console.log("Avatar Submitted", avatarFile)
   
   return (
     <form onSubmit={handleFormSubmit}>
