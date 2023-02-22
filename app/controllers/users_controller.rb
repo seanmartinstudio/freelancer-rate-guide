@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # require 'byebug'
+  require 'byebug'
 
     #SignupForm end point (THIS IS THE ACTIVE ONE FOR THE RECORD)
     #POST '/signup'
@@ -39,8 +39,7 @@ class UsersController < ApplicationController
 
   def avatar
     user = User.find_by(id: session[:user_id])
-    avatar_url = user.avatar.url
-    render json: { avatar_url: avatar_url }
+    render json: { avatar: rails_blob_path(user.avatar) }
   end
 
   private
