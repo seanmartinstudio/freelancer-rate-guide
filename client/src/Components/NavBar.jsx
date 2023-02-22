@@ -8,9 +8,23 @@ const NavBar = () => {
   const [activePage, setActivePage] = useState('home')
   const navigate = useNavigate()
   const [user, setUser] = useContext(UserContext)
-
+  const [avatar, setAvatar] = useState(null)
 
   console.log("Nav User:", user)
+  console.log("Avatar", avatar)
+
+  useEffect(() => {
+    axios.get('/avatar')
+    .then(function (response) {
+      // handle success
+      setAvatar(response.data.avatar)
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+  }, [])
+  
 
 
   function handleLogoutClick() {
@@ -43,6 +57,13 @@ const NavBar = () => {
             onClick={() => handleNavigationClick('about')}>How To Use This Site</button>
         </Link>
         <button className="button" type="button" onClick={handleLogoutClick}>Log Out</button>
+        <figure>
+        <img src={avatar} alt='user-avatar' className='image'></img>
+        <div className='avatar-text-container'>
+        <figcaption>Welcome</figcaption>
+        <figcaption>{user.username}</figcaption>
+        </div>
+        </figure>
     </nav>
   )
 }

@@ -7,6 +7,29 @@
   color: white; 
 }
 
+.image {
+  width: 100px;
+  height: 100px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 15px;
+}
+
+figure {
+  position: absolute;
+  align-self: center;
+  top: 0;
+  left: 0;
+}
+
+figcaption {
+  width: 100px;
+}
+
+.avatar-text-container {
+  text-align: center;
+}
+
 li {
   list-style: none;
 }
