@@ -40,9 +40,7 @@ class UsersController < ApplicationController
 
   def avatar
     user = User.find_by(id: session[:user_id])
-    if user
-    user.avatar.attach(params[:avatar])
-    end
+    render json: { avatar: rails_blob_path(user.avatar) }
   end
 
   private

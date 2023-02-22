@@ -42,6 +42,8 @@ const SignupPage = () => {
       setErrors(["Username, Password and Email cannot be blank."])
     })
   }
+
+  console.log("Signup Page Avatar", avatarFile)
   
 
   const navigatToLoginPage = () => {

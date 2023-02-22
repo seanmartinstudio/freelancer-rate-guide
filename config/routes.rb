@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   #USERS
   root "users#index"
   get '/me', to: 'users#show'
-  get '/logged_user', to: 'users#logged_user'
-  post '/avatar', to: 'users#avatar'
+  get 'logged_user', to: 'users#logged_user'
+  get 'avatar', to: 'users#avatar'
 
   #SESSIONS
   post '/login', to: 'sessions#create'
