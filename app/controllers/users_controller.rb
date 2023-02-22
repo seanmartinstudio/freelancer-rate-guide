@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  require 'byebug'
+  # require 'byebug'
 
     #SignupForm end point (THIS IS THE ACTIVE ONE FOR THE RECORD)
     #POST '/signup'
