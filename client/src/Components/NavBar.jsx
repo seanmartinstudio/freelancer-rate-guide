@@ -1,6 +1,7 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from '../App'
+import axios from 'axios'
 
 const NavBar = () => {
 
@@ -8,7 +9,9 @@ const NavBar = () => {
   const navigate = useNavigate()
   const [user, setUser] = useContext(UserContext)
 
-  console.log("Avatar:", user.avatar)
+
+  console.log("Nav User:", user)
+
 
   function handleLogoutClick() {
     fetch("/logout", { method: "DELETE" }).then((response) => {

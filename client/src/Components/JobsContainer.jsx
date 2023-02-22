@@ -34,9 +34,9 @@ const JobsContainer = () => {
 
 
 
-    console.log("Drop Down Job Title:", jobTitle)
-    console.log("Drop Down Rate:", parseInt(rate))
-    console.log("Fetch for Job by title", jobs)
+    // console.log("Drop Down Job Title:", jobTitle)
+    // console.log("Drop Down Rate:", parseInt(rate))
+    // console.log("Fetch for Job by title", jobs)
 
   return (
     <div>

@@ -18,14 +18,20 @@ function App() {
   const [user, setUser] = useState(false)
 
   useEffect(() => {
-    axios.get('/users')
+    axios.get('/logged_user')
   .then(function (response) {
-   setUser(response.data)
+    if(response.status === 200) {
+   setUser(response.data) }
+  })
+  .then(function () {
+    console.log("App Js User:", user)
   })
   .catch(function (error) {
     console.log("App.js Error ->", error);
   })
   }, []);
+
+ 
 
   return (
     <UserContext.Provider value={[user, setUser]}>
