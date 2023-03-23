@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   require 'byebug'
 
+    def user_all
+      users = User.all
+      render json: users
+    end
+
     #SignupForm end point (THIS IS THE ACTIVE ONE FOR THE RECORD)
     #POST '/signup'
     # def create 
@@ -16,6 +21,7 @@ class UsersController < ApplicationController
     def logged_user 
       user = User.find_by(id: session[:user_id])
       render json: user
+      # render json: user.as_json(include: {avatar_attachment: {include: :blob}})
     end
 
     #SignupForm end point

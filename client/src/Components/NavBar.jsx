@@ -3,15 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from '../App'
 import axios from 'axios'
 
-const NavBar = () => {
+const NavBar = ( {showAvatar} ) => {
 
   const [activePage, setActivePage] = useState('home')
   const navigate = useNavigate()
   const [user, setUser] = useContext(UserContext)
   const [avatar, setAvatar] = useState(null)
 
-  // console.log("Nav User:", user)
-  // console.log("Avatar", avatar)
 
   useEffect(() => {
     axios.get('/avatar')
@@ -23,9 +21,10 @@ const NavBar = () => {
       // handle error
       console.log(error);
     })
-  }, [])
+  }, [showAvatar])
   
-
+console.log("Nav Bar showAvatar Boolen", showAvatar)
+console.log("Avatar Obj Nav Page", avatar)
 
   function handleLogoutClick() {
     fetch("/logout", { method: "DELETE" }).then((response) => {
@@ -52,16 +51,16 @@ const NavBar = () => {
         <button  type='button'  className={activePage === 'user-job-posts' ? 'active' : ''}
             onClick={() => handleNavigationClick('user-job-posts')}>User Job Posts</button>
         </Link>
-        <Link to="how-to">
+        {/* <Link to="how-to">
         <button  type='button'  className={activePage === 'about' ? 'active' : ''}
             onClick={() => handleNavigationClick('about')}>How To Use This Site</button>
-        </Link>
-        <Link to="add-avatar">
+        </Link> */}
+        {/* <Link to="add-avatar">
         <button  type='button'  className={activePage === 'add-avatar' ? 'active' : ''}
             onClick={() => handleNavigationClick('add-avatar')}>Add Avatar</button>
-        </Link>
+        </Link> */}
         <button className="button" type="button" onClick={handleLogoutClick}>Log Out</button>
-        <figure>
+        {/* <figure>
         <div>
           {avatar ? <img src={avatar} alt='user-avatar' className='image'></img> : null }
         </div>
@@ -69,7 +68,7 @@ const NavBar = () => {
         <figcaption>Welcome</figcaption>
         <figcaption>{user.username}</figcaption>
         </div>
-        </figure>
+        </figure> */}
     </nav>
   )
 }

@@ -13,9 +13,14 @@ import AboutPage from './Pages/AboutPage';
 import AddAvatarPage from './Pages/AddAvatarPage';
 
 export const UserContext = createContext()
+export const AvatarContext = createContext()
+
 
 function App() {
   const [user, setUser] = useState(false)
+
+  const [showAvatar, setShowAvatar] = useState(false)
+
 
   useEffect(() => {
     axios.get('/logged_user')
@@ -32,12 +37,12 @@ function App() {
   })
   }, []);
 
- 
+ console.log("App JS showAvatar Boolean", showAvatar)
 
   return (
     <UserContext.Provider value={[user, setUser]}>
       <nav>
-        {user ? <NavBar/> : null}
+        {user ? <NavBar showAvatar={showAvatar}/> : null}
       </nav>
       <Routes>
       <Route path="/" element={user ? <HomePage /> : <LandingPage />} />
@@ -46,7 +51,7 @@ function App() {
       <Route path="/create-job-post" element={<PostJobPage/>} />
       <Route path="/user-job-posts" element={<UserJobsPage/>} />
       <Route path='how-to' element={<AboutPage/>} />
-      <Route path='add-avatar' element={<AddAvatarPage/>} />
+      {/* <Route path='add-avatar' element={<AddAvatarPage showAvatar={showAvatar} setShowAvatar={setShowAvatar}/>} /> */}
       </Routes>
     </UserContext.Provider>
   );

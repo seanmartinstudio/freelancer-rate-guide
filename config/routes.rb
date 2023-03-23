@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get 'avatar', to: 'users#avatar'
   post '/add_avatar/:id', to: 'users#add_avatar'
 
+  get 'user_all', to: 'users#user_all'
+
   #SESSIONS
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
