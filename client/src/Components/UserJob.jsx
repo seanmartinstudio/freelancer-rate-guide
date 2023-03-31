@@ -41,7 +41,7 @@ const UserJob = ( {job, company, industry, industryID, companyID, user, id , han
       <p>Username: {user}</p>
     </article>
     { editJobForm
-    ? <EditJobForm id={id} setEditJobForm={setEditJobForm} editJobForm={editJobForm} userJobs={userJobs} setUserJobs={setUserJobs} prefillJobTitle={job_title} prefillJobDescription={job_description} prefillRate={rate} prefillExperience={experience} prefillIndustry={industryID} prefillCompany={companyID}/>
+    ? <EditJobForm id={id} setEditJobForm={setEditJobForm} editJobForm={editJobForm} userJobs={userJobs} setUserJobs={setUserJobs} prefillJobTitle={job_title} prefillJobDescription={job_description} prefillRate={rate} prefillExperience={experience} prefillIndustry={industryID} prefillCompany={companyID} />
     : <div/>
     }
   </div>

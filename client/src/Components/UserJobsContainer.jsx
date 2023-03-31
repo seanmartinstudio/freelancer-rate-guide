@@ -16,19 +16,14 @@ const UserJobsContainer = ( {} ) => {
     .catch(function (error) {
       console.log("Jobs Error:", error)
     })
-  }, [])
+  }, [userJobs])
 
-//removed userJobs from useEffect depency that was update the state of edited job after edit is complete
-//need to mirror the logic of this handleDeleteUserJob function bellow to update state after edit
-//Create a handleEditUserJob function up from EditJobForm to UserJob to UserJobContainer
 
   const handleDeleteUserJob = (id) => {
     const updatedUserJobs = userJobs.filter((job) => job.id !== id);
     setUserJobs(updatedUserJobs)
   }
 
-
-  
   return (
     <section>
           {userJobs.map((job) => {
