@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  require 'byebug'
+  # require 'byebug'
 
     def user_all
       users = User.all
